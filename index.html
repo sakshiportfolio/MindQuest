@@ -1,0 +1,112 @@
+<!
+
+      <section class="panel hidden" id="host-lobby">
+        <h2>Host Lobby</h2>
+        <div class="info-row">
+          <div>Game PIN: <strong id="game-doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindQuest — Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>MindQuest</h1>
+      <div class="badge">Prototype • Local only</div>
+    </header>
+
+    <main class="container">
+      <section class="panel" id="landing">
+        <h2>Create or Join a Game</h2>
+        <div class="row">
+          <button class="btn primary" id="btn-host">Host Game</button>
+          <button class="btn" id="btn-join">Join Game</button>
+        </div>
+        <p class="muted">Open another browser tab to simulate players (or share with friends on same machine).</p>
+      </section>
+
+      <!-- Host UI -->
+      <section class="panel hidden" id="host-setup">
+        <h2>Host Setup</h2>
+        <label>Host name <input id="host-name" placeholder="eg. Teacher A"/></label>
+        <label>Game title <input id="game-title" value="MindQuest Challenge"/></label>
+        <div class="row">
+          <button class="btn primary" id="create-game">Create Game</button>
+          <button class="btn" id="back-landing-1">Back</button>
+        </div>
+      </section>pin">—</strong></div>
+          <div>Players: <strong id="players-count">0</strong></div>
+        </div>
+        <div class="panel-sub">
+          <h3>Questions (edit or use sample)</h3>
+          <textarea id="questions-json" rows="8"></textarea>
+          <div class="row">
+            <button class="btn primary" id="save-questions">Save Questions</button>
+            <button class="btn" id="add-sample">Load Sample</button>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn start primary" id="start-quiz">Start Quiz</button>
+          <button class="btn" id="end-game">End Game</button>
+        </div>
+        <div class="muted">Tip: Questions are stored locally in JSON array. Use same device or share PIN for other tabs to join.</div>
+      </section>
+
+      <!-- Player UI -->
+      <section class="panel hidden" id="player-join">
+        <h2>Join Game</h2>
+        <label>Your name <input id="player-name" placeholder="eg. Rohan"/></label>
+        <label>Game PIN <input id="join-pin" placeholder="6-digit pin"/></label>
+        <div class="row">
+          <button class="btn primary" id="join-game">Join</button>
+          <button class="btn" id="back-landing-2">Back</button>
+        </div>
+        <div id="join-error" class="muted error"></div>
+      </section>
+
+      <!-- Player lobby -->
+      <section class="panel hidden" id="player-lobby">
+        <h2>Waiting Room</h2>
+        <div>Game: <strong id="lobby-game-title">—</strong></div>
+        <div>PIN: <strong id="lobby-pin">—</strong></div>
+        <div>Players:</div>
+        <ul id="players-list"></ul>
+        <div class="muted">Waiting for host to start the quiz...</div>
+      </section>
+
+      <!-- Quiz view (both host & players) -->
+      <section class="panel hidden" id="quiz-screen">
+        <div class="quiz-top">
+          <div id="quiz-title">—</div>
+          <div id="quiz-timer">15</div>
+        </div>
+        <div id="question-text" class="question">Question will appear here</div>
+        <div id="answers" class="answers"></div>
+        <div id="after-answer" class="hidden">
+          <div id="answer-feedback"></div>
+          <button class="btn" id="next-question">Next</button>
+        </div>
+      </section>
+
+      <!-- Leaderboard -->
+      <section class="panel hidden" id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard-list"></ol>
+        <div class="row">
+          <button class="btn primary" id="replay-quiz">Play Again</button>
+          <button class="btn" id="back-home">Home</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">Made with ❤️ • MindQuest prototype</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
